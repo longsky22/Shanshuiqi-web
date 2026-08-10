@@ -1,5 +1,4 @@
 import { Snowflake, Shield, Wind, Paintbrush, Monitor, Wrench, ArrowRight } from 'lucide-react';
-import { NavLink } from '@lark-apaas/client-toolkit-lite';
 import { MOCK_SERVICES } from '@/data/services';
 import { Image } from '@/components/ui/image';
 
@@ -80,13 +79,13 @@ export default function ServicesSection() {
                     </div>
                   </div>
 
-                  <NavLink
-                    to="#projects"
+                  <a
+                    href="#projects"
                     className="inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:gap-2.5 transition-all"
                   >
                     查看项目
                     <ArrowRight className="w-4 h-4" />
-                  </NavLink>
+                  </a>
                 </div>
               </div>
             );

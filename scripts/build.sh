@@ -30,16 +30,10 @@ echo "  ASSETS_CDN_PATH=$ASSETS_CDN_PATH"
 echo "  CLIENT_BASE_PATH=${CLIENT_BASE_PATH:-/}"
 echo "  node: $(node -v)"
 
-# Linux CI 上 Windows lockfile 常漏装 rolldown 原生包，构建前强制补齐
-if [ "$(uname -s)" = "Linux" ]; then
-  echo "Ensuring @rolldown/binding-linux-x64-gnu ..."
-  npm install @rolldown/binding-linux-x64-gnu@1.1.5 --no-save --include=optional || \
-    npm install @rolldown/binding-linux-x64-gnu@1.1.5 --no-save --force
-fi
-
 rm -rf "$ROOT/dist"
 
 # 1. Vite 构建（强制 base=/）
+# 使用标准 Vite 6（rollup），不再依赖 rolldown 原生包 / 妙搭 preset
 npx vite build --outDir "$ROOT/dist/client" --emptyOutDir --base /
 
 # 2. HTML + public 静态文件 → dist/output/

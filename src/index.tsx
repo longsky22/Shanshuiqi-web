@@ -17,11 +17,12 @@ function resolveBasename() {
   return raw;
 }
 
-function Fallback({ error }: { error: Error }) {
+function Fallback({ error }: { error: unknown }) {
+  const message = error instanceof Error ? error.message : String(error);
   return (
     <div style={{ padding: 24, fontFamily: "sans-serif" }}>
       <h1>页面加载失败</h1>
-      <p>{error.message}</p>
+      <p>{message}</p>
     </div>
   );
 }

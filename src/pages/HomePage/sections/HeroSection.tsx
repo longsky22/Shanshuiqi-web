@@ -1,5 +1,4 @@
 import { ChevronDown, Phone, ArrowRight } from 'lucide-react';
-import { NavLink } from '@lark-apaas/client-toolkit-lite';
 import { MOCK_COMPANY } from '@/data/company';
 import Image from '@/components/ui/image';
 
@@ -47,20 +46,20 @@ export default function HeroSection() {
           </p>
 
           <div className="flex flex-wrap items-center gap-4">
-            <NavLink
-              to="#contact"
+            <a
+              href="#contact"
               className="inline-flex items-center gap-2 px-7 py-3.5 rounded-lg bg-white text-primary font-semibold text-base hover:bg-white/90 hover:-translate-y-0.5 transition-all shadow-lg shadow-black/20"
             >
               <Phone className="w-5 h-5" />
               <span>联系我们</span>
-            </NavLink>
-            <NavLink
-              to="#about"
+            </a>
+            <a
+              href="#about"
               className="inline-flex items-center gap-2 px-7 py-3.5 rounded-lg bg-transparent border-2 border-white/40 text-white font-semibold text-base hover:bg-white/10 hover:border-white/60 transition-all"
             >
               <span>了解更多</span>
               <ArrowRight className="w-5 h-5" />
-            </NavLink>
+            </a>
           </div>
         </div>
       </div>

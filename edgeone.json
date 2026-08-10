@@ -1,9 +1,9 @@
 {
   "name": "shanshuiqi-web",
-  "installCommand": "npm install --include=optional && npm install @rolldown/binding-linux-x64-gnu@1.1.5 --no-save",
+  "installCommand": "npm install",
   "buildCommand": "npm run build",
   "outputDirectory": "./dist/output",
-  "nodeVersion": "22.11.0",
+  "nodeVersion": "20.18.0",
   "rewrites": [
     {
       "source": "/*",

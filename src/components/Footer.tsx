@@ -1,6 +1,4 @@
 import { Phone, Mail, MapPin, ChevronRight } from 'lucide-react';
-import { NavLink } from '@lark-apaas/client-toolkit-lite';
-import { UniversalLink } from '@lark-apaas/client-toolkit-lite';
 
 const FOOTER_NAV = [
   { label: '首页', anchor: '#hero' },
@@ -45,13 +43,13 @@ export default function Footer() {
             <ul className="space-y-2">
               {FOOTER_NAV.map((item) => (
                 <li key={item.anchor}>
-                  <NavLink
-                    to={item.anchor}
+                  <a
+                    href={item.anchor}
                     className="flex items-center gap-1 text-sm text-white/70 hover:text-white transition-colors"
                   >
                     <ChevronRight className="w-3.5 h-3.5 shrink-0" />
                     <span>{item.label}</span>
-                  </NavLink>
+                  </a>
                 </li>
               ))}
             </ul>
@@ -83,12 +81,12 @@ export default function Footer() {
               </li>
               <li className="flex items-start gap-3">
                 <Mail className="w-4 h-4 shrink-0 mt-0.5 text-white/60" />
-                <UniversalLink
-                  to="mailto:453667338@qq.com"
+                <a
+                  href="mailto:453667338@qq.com"
                   className="text-sm text-white/70 hover:text-white transition-colors break-all"
                 >
                   453667338@qq.com
-                </UniversalLink>
+                </a>
               </li>
               <li className="flex items-start gap-3">
                 <MapPin className="w-4 h-4 shrink-0 mt-0.5 text-white/60" />

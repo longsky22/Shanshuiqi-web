@@ -1,7 +1,17 @@
 import { globalIgnores } from 'eslint/config'
-import { eslintPresets } from '@lark-apaas/coding-presets-react'
 
+// Minimal config without Miaoda presets (EdgeOne/CI must not need private packages)
 export default [
   globalIgnores(['dist', 'source_package', '**/components/ui/**']),
-  ...eslintPresets.client,
+  {
+    files: ['src/**/*.{js,mjs,cjs,ts,tsx}'],
+    languageOptions: {
+      ecmaVersion: 2022,
+      sourceType: 'module',
+      parserOptions: {
+        ecmaFeatures: { jsx: true },
+      },
+    },
+    rules: {},
+  },
 ]
