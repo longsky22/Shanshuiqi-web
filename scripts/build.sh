@@ -28,6 +28,14 @@ export NODE_ENV="${NODE_ENV:-production}"
 echo "Build env:"
 echo "  ASSETS_CDN_PATH=$ASSETS_CDN_PATH"
 echo "  CLIENT_BASE_PATH=${CLIENT_BASE_PATH:-/}"
+echo "  node: $(node -v)"
+
+# Linux CI 上 Windows lockfile 常漏装 rolldown 原生包，构建前强制补齐
+if [ "$(uname -s)" = "Linux" ]; then
+  echo "Ensuring @rolldown/binding-linux-x64-gnu ..."
+  npm install @rolldown/binding-linux-x64-gnu@1.1.5 --no-save --include=optional || \
+    npm install @rolldown/binding-linux-x64-gnu@1.1.5 --no-save --force
+fi
 
 rm -rf "$ROOT/dist"
 
