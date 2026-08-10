@@ -50,11 +50,6 @@ function ProjectImage({
           {project.category}
         </span>
       </div>
-      <div className="absolute bottom-4 right-4">
-        <div className="px-3 py-1.5 rounded-lg bg-primary text-white text-sm font-bold tabular-nums">
-          {project.amount}
-        </div>
-      </div>
     </div>
   );
 }

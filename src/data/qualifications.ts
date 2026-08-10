@@ -37,9 +37,8 @@ export const MOCK_CERTIFICATES: ICertificate[] = [
 
 export const MOCK_PROJECT_STATS: IProjectStat[] = [
   { id: '1', label: '总项目数', value: '50+', unit: '项' },
-  { id: '2', label: '总合同额', value: '5800+', unit: '万元' },
-  { id: '3', label: '服务客户', value: '30+', unit: '家' },
-  { id: '4', label: '资质等级', value: '3项', unit: '贰级' },
+  { id: '2', label: '服务客户', value: '30+', unit: '家' },
+  { id: '3', label: '资质等级', value: '3项', unit: '贰级' },
 ]
 
 export const MOCK_KEY_PROJECTS: IKeyProject[] = [

@@ -89,9 +89,9 @@ export const MOCK_FEATURED_PROJECTS: IProject[] = [
     description:
       '围绕「检查—保养—维修—跟踪」展开，覆盖郭屯煤矿系统保养、梁宝寺煤矿冷却塔填料更换及益健药业制冷机采购安装与维保。',
     highlights: [
-      '郭屯煤矿维保 19 万元',
-      '梁宝寺煤矿维修 12 万元',
-      '益健药业采购安装及维保约 46.2 万元',
+      '郭屯煤矿系统保养维保',
+      '梁宝寺煤矿冷却塔填料更换维修',
+      '益健药业制冷机采购安装及维保',
     ],
     imageUrl: '/projects/weibao.jpg',
     featured: true,

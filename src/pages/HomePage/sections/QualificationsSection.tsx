@@ -111,7 +111,7 @@ export default function QualificationsSection() {
         {/* 重点项目表格 */}
         <div className="bg-card rounded-xl border border-border/60 overflow-hidden">
           <div className="px-6 md:px-8 py-5 border-b border-border/60">
-            <h3 className="text-lg font-bold text-foreground">重点项目清单（按造价排序）</h3>
+            <h3 className="text-lg font-bold text-foreground">重点项目清单</h3>
             <p className="text-sm text-muted-foreground mt-1">
               累计完成百余项工程，服务工业、医疗、商业及公共建筑领域
             </p>
@@ -120,10 +120,9 @@ export default function QualificationsSection() {
             <table className="w-full text-sm">
               <thead>
                 <tr className="bg-muted/50">
-                  <th className="text-left font-semibold text-foreground px-6 py-3 whitespace-nowrap">排名</th>
+                  <th className="text-left font-semibold text-foreground px-6 py-3 whitespace-nowrap">序号</th>
                   <th className="text-left font-semibold text-foreground px-6 py-3 whitespace-nowrap">项目名称</th>
                   <th className="text-left font-semibold text-foreground px-6 py-3 whitespace-nowrap">地点</th>
-                  <th className="text-right font-semibold text-foreground px-6 py-3 whitespace-nowrap">合同额</th>
                   <th className="text-left font-semibold text-foreground px-6 py-3 whitespace-nowrap">工期</th>
                 </tr>
               </thead>
@@ -146,9 +145,6 @@ export default function QualificationsSection() {
                     </td>
                     <td className="px-6 py-3.5 text-muted-foreground whitespace-nowrap">
                       {project.location}
-                    </td>
-                    <td className="px-6 py-3.5 text-right font-semibold text-primary whitespace-nowrap tabular-nums">
-                      {project.amount}
                     </td>
                     <td className="px-6 py-3.5 text-muted-foreground whitespace-nowrap">
                       {project.period}

@@ -59,8 +59,6 @@ export const MOCK_COMPANY: ICompany = {
     { id: '2', label: '注册资金', value: '1,000', unit: '万元' },
     { id: '3', label: '公司人数', value: '32', unit: '人' },
     { id: '4', label: '办公面积', value: '260', unit: '㎡' },
-    { id: '5', label: '最大业务量', value: '6,000', unit: '万元' },
-    { id: '6', label: '2025合同额', value: '582.18', unit: '万元' },
   ],
   advantages: [
     {
