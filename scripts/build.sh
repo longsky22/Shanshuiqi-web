@@ -31,10 +31,18 @@ if [ -d "$ROOT/dist/client/assets" ]; then
   cp -r "$ROOT/dist/client/assets" "$OUTPUT_RESOURCE/"
 fi
 
-# 4. 私有静态资源 → dist/output_static/（排除代码文件）
+# 4. 私有静态资源 → dist/output_static/（排除代码文件；不依赖 rsync）
 if [ -d "$ROOT/shared/static" ]; then
   mkdir -p "$OUTPUT_STATIC"
-  rsync -a --exclude='*.ts' --exclude='*.tsx' --exclude='*.js' --exclude='*.jsx' "$ROOT/shared/static/" "$OUTPUT_STATIC/"
+  # 腾讯云等精简构建环境可能没有 rsync，改用 find + cp
+  find "$ROOT/shared/static" -type f \
+    ! -name '*.ts' ! -name '*.tsx' ! -name '*.js' ! -name '*.jsx' \
+    -print0 | while IFS= read -r -d '' file; do
+      rel="${file#$ROOT/shared/static/}"
+      dest_dir="$OUTPUT_STATIC/$(dirname "$rel")"
+      mkdir -p "$dest_dir"
+      cp "$file" "$OUTPUT_STATIC/$rel"
+    done
 fi
 
 # 5. capability 配置 → dist/output_capabilities/
